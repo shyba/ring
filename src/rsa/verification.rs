@@ -184,6 +184,31 @@ rsa_params!(
 );
 
 rsa_params!(
+    RSA_PKCS1_2048_8192_SHA256_RAW,
+    2048,
+    &super::RSA_PKCS1_SHA256_RAW,
+    "Verification of signatures using RSA keys of 2048-8192 bits,
+             PKCS#1.5 padding, and SHA-256 in direct mode.\n\nSee \"`RSA_PKCS1_*` Details\" in
+             `ring::signature`'s module-level documentation for more details."
+);
+rsa_params!(
+    RSA_PKCS1_3072_8192_SHA384_RAW,
+    3072,
+    &super::RSA_PKCS1_SHA384_RAW,
+    "Verification of signatures using RSA keys of 3072-8192 bits,
+             PKCS#1.5 padding, and SHA-384 in direct mode.\n\nSee \"`RSA_PKCS1_*` Details\" in
+             `ring::signature`'s module-level documentation for more details."
+);
+rsa_params!(
+    RSA_PKCS1_4096_8192_SHA512_RAW,
+    4096,
+    &super::RSA_PKCS1_SHA512_RAW,
+    "Verification of signatures using RSA keys of 4096-8192 bits,
+             PKCS#1.5 padding, and SHA-512 in direct mode.\n\nSee \"`RSA_PKCS1_*` Details\" in
+             `ring::signature`'s module-level documentation for more details."
+);
+
+rsa_params!(
     RSA_PSS_2048_8192_SHA256,
     2048,
     &super::RSA_PSS_SHA256,

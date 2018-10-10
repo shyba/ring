@@ -166,6 +166,24 @@ rsa_pkcs1_padding!(
     &SHA512_PKCS1_DIGESTINFO_PREFIX,
     "PKCS#1 1.5 padding using SHA-512 for RSA signatures."
 );
+rsa_pkcs1_padding!(
+    RSA_PKCS1_SHA256_RAW,
+    &digest::SHA256,
+    &RAW_PKCS1_DIGESTINFO_PREFIX,
+    "PKCS#1 1.5 padding using SHA-256 in direct mode for RSA signatures."
+);
+rsa_pkcs1_padding!(
+    RSA_PKCS1_SHA384_RAW,
+    &digest::SHA384,
+    &RAW_PKCS1_DIGESTINFO_PREFIX,
+    "PKCS#1 1.5 padding using SHA-384 in direct mode for RSA signatures."
+);
+rsa_pkcs1_padding!(
+    RSA_PKCS1_SHA512_RAW,
+    &digest::SHA512,
+    &RAW_PKCS1_DIGESTINFO_PREFIX,
+    "PKCS#1 1.5 padding using SHA-512 in direct mode for RSA signatures."
+);
 
 macro_rules! pkcs1_digestinfo_prefix {
     ( $name:ident, $digest_len:expr, $digest_oid_len:expr,
@@ -179,6 +197,8 @@ macro_rules! pkcs1_digestinfo_prefix {
         ];
     }
 }
+
+static RAW_PKCS1_DIGESTINFO_PREFIX: [u8; 0] = [];
 
 pkcs1_digestinfo_prefix!(
     SHA1_PKCS1_DIGESTINFO_PREFIX,
